@@ -26,10 +26,8 @@ get '/' => sub {
        push @rpta, $d;
    }
    my $json_text = to_json \@rpta;
-   #$self->render(text => ("$json_text"));
+   
   	$c->render(text => ("$json_text"));
 };
 
 app->start;
-
-#fuente : https://github.com/kraih/mojo/wiki/Writing-websocket-chat-using-Mojolicious-Lite
