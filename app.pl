@@ -11,7 +11,8 @@ hook(before_dispatch => sub {
 	$self->res->headers->header('Access-Control-Allow-Credentials' => 'true');
 	$self->res->headers->header('Access-Control-Allow-Methods' => 'GET, OPTIONS, POST, DELETE, PUT');
 	$self->res->headers->header('Access-Control-Allow-Headers' => 'Content-Type, X-CSRF-Token');
-	$self->res->headers->header('x-powered-by' => 'Mojolicious (Perl)');
+	$self->res->headers->header('x-powered-by' => 'Mojolicious, Perl');
+	$self->res->headers->header('Server' => 'Perl, Ubuntu');
 	$self->res->headers->header('Access-Control-Max-Age' => '1728000');
 	#$self->respond_to(any => { data => '', status => 200 });
 });
@@ -30,4 +31,9 @@ get '/' => sub {
   	$c->render(text => ("$json_text"));
 };
 
-app->start;
+get '/hola' => sub {
+	my $c = shift;   
+  	$c->render(text => ("hola"));
+};
+
+app->start('daemon');

@@ -8,7 +8,7 @@ sub new {
     my $class = shift;
     my $userid = "";
     my $password = "";
-    my $client = MongoDB->connect("mongodb://192.168.1.19");
+    my $client = MongoDB->connect("mongodb://192.168.1.3");
     my $db = $client->get_database("db_monta");
     my $self = {
         _db => $db

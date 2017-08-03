@@ -34,6 +34,10 @@ Para imprimir variables:
         #print("\nA\n");print($url);print("\nB\n");
         #print("\n");print Dumper(%temp);print("\n");
 
+Ejecutar como daemon:
+
+    $ nohup command >/dev/null 2>&1 morbo app.pl -l http://localhost:3000 &
+
 ---
 
 #### Fuente
